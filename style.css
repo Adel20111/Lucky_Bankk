@@ -1,0 +1,31 @@
+.input-field {
+    padding: 10px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.board-cell {
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.board-cell:hover {
+    transform: scale(1.02);
+    background-color: #fef3c7;
+}
+
+.city-owner {
+    font-size: 11px;
+    color: #2563eb;
+    margin-top: 2px;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-hud">
+        <div class="hud-left">
+            <div class="hud-box">
+                <span class="hud-label">معاك</span>
+                <span id="cashValue" class="hud-value">10.000</span>
+            </div>
+            <div class="hud-box debt-box">
+                <span class="hud-label">عليك</span>
+                <span id="debtValue" class="hud-value">1.500</span>
+            </div>
+            <div class="hud-box time-box">
+                <span class="hud-label">Time</span>
+                <span id="gameTimer" class="hud-value">00:00:00</span>
+            </div>
+        </div>
+        <button id="settingsBtn" class="btn-settings">Settings</button>
+    </div>
+
+    <div class="game-container">
+        <div class="board-header">Lucky Bank</div>
+        <div class="board-grid" id="boardGrid">
+            <!-- سيتم توليد المدن تلقائياً بواسطة JavaScript -->
+        </div>
+    </div>
+
+    <div class="leaderboard-container">
+        <div class="board-header">Leaderboard</div>
+        <div id="leaderboardList" class="leaderboard-list"></div>
+    </div>
+
+    <!-- نافذة الشراء والبناء -->
+    <div id="actionModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+            <h3 id="actionTitle">تفاصيل المدينة</h3>
+            <p id="actionDesc"></p>
+            <div class="modal-actions">
+                <button id="btnBuyCity" class="btn-action btn-yes hidden">شراء المدينة</button>
+                <button id="btnBuildProject" class="btn-action btn-yes hidden">بناء مشروع</button>
+                <button id="btnMakeOffer" class="btn-action btn-menu hidden">تقديم عرض شراء</button>
+                <button id="btnCloseAction" class="btn-menu">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تقديم عرض شراء -->
+    <div id="offerModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+            <h3>تقديم عرض شراء</h3>
+            <p id="offerTargetText"></p>
+            <input type="number" id="offerPriceInput" placeholder="ادخل المبلغ المعروض" class="input-field">
+            <div class="confirm-actions">
+                <button id="btnSendOffer" class="btn-action btn-yes">إرسال العرض</button>
+                <button id="btnCancelOffer" class="btn-action btn-no">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة الاستجابة للعرض (قبول / رفض) -->
+    <div id="negotiateModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+            <h3>عرض شراء مقدم لك!</h3>
+            <p id="negotiateText"></p>
+            <div class="confirm-actions">
+                <button id="btnAcceptOffer" class="btn-action btn-yes">قبول البيع</button>
+                <button id="btnRejectOffer" class="btn-action btn-no">رفض</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+            <h3>الإعدادات</h3>
+            <button id="exitBtn" class="btn-menu btn-danger">خروج من اللعبة</button>
+            <button id="closeSettingsBtn" class="btn-menu">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- Exit Confirm Modal -->
+    <div id="exitConfirmModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+            <h3>هل أنت متأكد من الخروج؟</h3>
+            <div class="confirm-actions">
+                <button id="confirmYesBtn" class="btn-action btn-yes">نعم</button>
+                <button id="confirmNoBtn" class="btn-action btn-no">لا</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
